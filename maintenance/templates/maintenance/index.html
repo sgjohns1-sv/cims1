@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<head>
+    <title>Maintenance - Home</title>
+</head>
+<body>
+    <h1>Maintenance</h1>
+    <form>
+        <input type="text" name="search">
+        <input type="submit" value="Search">
+    </form>
+    <table>
+        <tr>
+            <td>Maintenance Record ID</td>
+            <td>Maintenance Title</td>
+            <td>Maintenance Cost</td>
+        </tr>
+        {% for asset in allAssets %}
+        <tr>
+            <td>{{maintenance.id}}</td>
+            <td>{{maintenance.maint_title}}</td>
+            <td>{{maintenance.maint_cost}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+
+
