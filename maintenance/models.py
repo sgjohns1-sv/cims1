@@ -1,9 +1,14 @@
 from django.db import models
+from datetime import datetime
+from assets.models import Asset
 
 # Create your models here.
 class Maintenance(models.Model):
-    maint_date = models.DateTimeField
-    maint_description = models.TextField
+    maintenance_date_default = datetime.today()
+
+    maint_assetID = models.ForeignKey(Asset, on_delete=models.CASCADE, default=1000)
     maint_title = models.CharField(max_length=100)
+    maint_description = models.TextField(blank=True)
     maint_cost = models.CharField(max_length=7)
-    maint_assetID = models.IntegerField
+    maint_date = models.DateTimeField(default=maintenance_date_default)
+    
