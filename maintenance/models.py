@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from datetime import datetime
 from assets.models import Asset
 
@@ -11,4 +12,4 @@ class Maintenance(models.Model):
     maint_description = models.TextField(blank=True)
     maint_cost = models.CharField(max_length=7)
     maint_date = models.DateTimeField(default=maintenance_date_default)
-    
+

@@ -1,9 +1,11 @@
 from django.urls import path
+from assets.views import AssetAddView, AssetListView, AssetDetailView, AssetUpdateView
 
 from . import views
 
 urlpatterns=[
-    path("", views.index, name="assets"),
-    path("<int:asset_id>", views.view, name="view"),
-    path("add/", views.add, name="add")
+    path("", AssetListView.as_view(), name="asset_assets"),
+    path("<int:pk>/", AssetDetailView.as_view(), name="asset_view"),
+    path("add/", AssetAddView.as_view(), name="asset_add"),
+    path("update/<int:pk>/", AssetUpdateView.as_view(), name="asset_update")
 ]

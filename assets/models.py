@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from datetime import datetime
 
 # Create your models here.
@@ -12,3 +13,5 @@ class Asset(models.Model):
     asset_purchaseDate = models.DateField(default=purchase_date_default)
     asset_eolDate = models.DateField(default=eol_date_default)
     asset_notes = models.TextField(blank=True)
+    def get_absolute_url(self):
+        return "/%i" % int(self.pk)

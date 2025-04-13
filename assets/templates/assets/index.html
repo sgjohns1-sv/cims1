@@ -4,29 +4,11 @@
 </head>
 <body>
     <h1>Assets</h1>
-    <form>
-        <input type="text" name="search">
-        <input type="submit" value="Search">
-    </form>
-    <table>
-        <tr>
-            <td>Asset ID</td>
-            <td>Asset Manufacturer</td>
-            <td>Asset Model</td>
-            <td>Asset SN</td>
-            <td>Asset Cost</td>
-        </tr>
-        {% for asset in allAssets %}
-        <tr>
-            <td>{{asset.id}}</td>
-            <td>{{asset.asset_manufacturer}}</td>
-            <td>{{asset.asset_model}}</td>
-            <td>{{asset.asset_sn}}</td>
-            <td>{{asset.asset_cost}}</td>
-        </tr>
+    <ul>
+        {% for asset in asset_list %}
+            <li>{{ asset.asset_manufacturer }} {{ asset.asset_model }}  {{ asset.asset_sn }}</li>
         {% endfor %}
-
-    </table>
+    </ul>
 </body>
 
 

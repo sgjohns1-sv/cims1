@@ -1,13 +1,31 @@
 from django.shortcuts import render
 from .models import Asset
+from django.views.generic import CreateView, DetailView, ListView, UpdateView
+from assets.forms import NewAssetForm
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
+
 
 # Create your views here.
 
-def index(request):
-    allAssets = Asset.objects.all()
-    context = {"allAssets": allAssets}
-    return render(request, "assets/index.html", context)
-def view(request):
-    return render(request, "assets/viewasset.html")
-def add(request):
-    return render(request, "assets/newasset.html")
+class AssetListView(ListView):
+    template_name = "assets/index.html"
+    model = Asset
+
+class AssetDetailView(DetailView):
+    template_name = "assets/viewasset.html"
+    model = Asset
+    def get_queryset(self):
+        self.asset = get_object_or_404(Asset, id=self.kwargs["pk"])
+        print(self.asset.id)
+        return Asset.objects.filter(id=self.asset.id)
+
+class AssetAddView(CreateView):
+    template_name="assets/newasset.html"
+    model = Asset
+    fields = ["asset_manufacturer", "asset_model", "asset_sn", "asset_cost", "asset_purchaseDate", "asset_eolDate", "asset_notes"]
+
+class AssetUpdateView(UpdateView):
+    template_name="assets/updateasset.html"
+    model = Asset
+    fields = ["asset_manufacturer", "asset_model", "asset_sn", "asset_cost", "asset_purchaseDate", "asset_eolDate", "asset_notes"]

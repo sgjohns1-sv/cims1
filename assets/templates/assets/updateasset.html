@@ -1,0 +1,12 @@
+<!DOCTYPE html> 
+<head>
+    <title>Assets - Update</title>
+</head>
+<body>
+    <h1>New Asset</h1>
+    <form action="/assets/update/{{object.id}}/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value = "Update Asset">
+    </form>
+</body>
