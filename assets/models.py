@@ -14,4 +14,4 @@ class Asset(models.Model):
     asset_eolDate = models.DateField(default=eol_date_default)
     asset_notes = models.TextField(blank=True)
     def get_absolute_url(self):
-        return "/%i" % int(self.pk)
+        return reverse("asset_view", kwargs={"pk": self.pk})

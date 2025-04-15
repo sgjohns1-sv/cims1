@@ -1,8 +1,5 @@
-from django.shortcuts import render
 from .models import Asset
-from django.views.generic import CreateView, DetailView, ListView, UpdateView
-from assets.forms import NewAssetForm
-from django.http import HttpResponse
+from django.views.generic import CreateView, DetailView, ListView, UpdateView, DeleteView
 from django.shortcuts import get_object_or_404
 
 
@@ -29,3 +26,8 @@ class AssetUpdateView(UpdateView):
     template_name="assets/updateasset.html"
     model = Asset
     fields = ["asset_manufacturer", "asset_model", "asset_sn", "asset_cost", "asset_purchaseDate", "asset_eolDate", "asset_notes"]
+
+class AssetDeleteView(DeleteView):
+    template_name="assets/deleteasset.html"
+    model = Asset
+    success_url="assets/"

@@ -4,7 +4,7 @@
 </head>
 <body>
     <h1>New Asset</h1>
-    <form action="/assets/add/" method="post">
+    <form action="{{object.id}}"method="post">
         {% csrf_token %}
         {{ form }}
         <input type="submit" value = "Create Asset">
