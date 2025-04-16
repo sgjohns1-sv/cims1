@@ -12,6 +12,7 @@
 
         <table class="table table-striped table-hover">
             <tr>
+                <th>ID</th>
                 <th>Manufacturer</th>
                 <th>Model</th>
                 <th>Location</th>
@@ -22,6 +23,7 @@
             </tr>
             {% for asset in asset_list %}
                 <tr>
+                    <td><a href="{{ asset.id }}">{{ asset.id }}</a></td>
                     <td>{{ asset.asset_manufacturer }}</td>
                     <td>{{ asset.asset_model }}</td>
                     <td>{{ asset.asset_location }}</td>
