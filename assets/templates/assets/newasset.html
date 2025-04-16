@@ -1,8 +1,12 @@
 <!DOCTYPE html> 
+
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
 <head>
     <title>Assets - New</title>
 </head>
 <body>
+
     <h1>New Asset</h1>
     <form action="{{object.id}}"method="post">
         {% csrf_token %}

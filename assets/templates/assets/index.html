@@ -1,14 +1,38 @@
 <!DOCTYPE html> 
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
 <head>
     <title>Assets - Home</title>
 </head>
 <body>
-    <h1>Assets</h1>
-    <ul>
-        {% for asset in asset_list %}
-            <li>{{ asset.asset_manufacturer }} {{ asset.asset_model }}  {{ asset.asset_sn }}</li>
-        {% endfor %}
-    </ul>
+
+    <div>
+
+        <h1>Assets</h1>
+
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Manufacturer</th>
+                <th>Model</th>
+                <th>Location</th>
+                <th>Serial Number</th>
+                <th>Cost</th>
+                <th>Purchase Date</th>
+                <th>EOL Date</th>
+            </tr>
+            {% for asset in asset_list %}
+                <tr>
+                    <td>{{ asset.asset_manufacturer }}</td>
+                    <td>{{ asset.asset_model }}</td>
+                    <td>{{ asset.asset_location }}</td>
+                    <td>{{ asset.asset_sn }}</td>
+                    <td>{{ asset.asset_cost }}</td>
+                    <td>{{ asset.asset_purchaseDate }}</td>
+                    <td>{{ asset.asset_eolDate }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
 </body>
 
 
