@@ -11,8 +11,13 @@
             <li>Model: {{ asset.asset_model }}</li>
             <li>Serial Number: {{ asset.asset_sn }}</li>
     </ul>
-    <form action="delete/" method="post">
+    <form action="delete/" method="get">
+        {% csrf_token %}
         <input type="submit" value="Delete"/>
+    </form>
+    <form action="update/" method="get">
+        {% csrf_token %}
+        <input type="submit" value="Update"/>
     </form>
 </body>
 
