@@ -1,4 +1,5 @@
 from .models import Asset
+from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, ListView, UpdateView, DeleteView
 from django.shortcuts import get_object_or_404
 
@@ -30,4 +31,4 @@ class AssetUpdateView(UpdateView):
 class AssetDeleteView(DeleteView):
     template_name="assets/deleteasset.html"
     model = Asset
-    success_url="assets/"
+    success_url = reverse_lazy("asset_assets")
