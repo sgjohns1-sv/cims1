@@ -6,6 +6,9 @@
     <title>Assets - Details</title>
 </head>
 <body>
+    <form action="/assets" method="get">
+        <input type="submit" value="Return to Assets">
+    </form>
     <h1> Asset {{ asset.id }} </h1>
     <ul>
             <li>Manufacturer: {{ asset.asset_manufacturer }}</li> 
@@ -20,5 +23,6 @@
         {% csrf_token %}
         <input type="submit" value="Update"/>
     </form>
+
 </body>
 
