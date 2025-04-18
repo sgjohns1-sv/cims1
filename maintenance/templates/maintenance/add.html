@@ -1,17 +1,23 @@
 <!DOCTYPE html> 
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 <head>
     <title>Maintenance - New</title>
 </head>
+
 <body>
-    <h1>New Maintenance Record</h1>
-    <form>
-        <label for="title">Title: </label>
-        <input type="text" id="title" name="title"><br>
-
-        <label for="cost">Cost:</label>
-        <input type="text" id="cost" name="cost"><br>
-
-        <br><br>
-        <input type="submit" value="Add Record">
+    <nav>
+        <a href="/home/">Home</a>
+        <a href="/assets/">Assets</a>
+        <a href="/maintenance/">Maintenance</a>
+        <a href="/reports/">Reports</a>
+        <a href="/settings/">Settings</a>
+    </nav>
+    <h1>New Asset</h1>
+    <form action="{{object.id}}"method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value = "Create Asset">
     </form>
 </body>

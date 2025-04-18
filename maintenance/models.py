@@ -12,4 +12,6 @@ class Maintenance(models.Model):
     maint_description = models.TextField(blank=True)
     maint_cost = models.CharField(max_length=7)
     maint_date = models.DateTimeField(default=maintenance_date_default)
-
+    def get_absolute_url(self):
+        return reverse("", kwargs={"pk": self.pk})
+    

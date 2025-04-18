@@ -30,7 +30,7 @@
             </tr>
             {% for maintenance in recent_maintenance %}
                 <tr>
-                    <td><a href="#">3</a></td>
+                    <td><a href="{{maintenance.assetID}}"></a>{{maintenance.maint_assetID}}</td>
                     <td>{{ maintenance.maint_title }}</td>
                     <td>{{ maintenance.maint_cost }}</td>
                 </tr>
