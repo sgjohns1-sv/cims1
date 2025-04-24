@@ -6,6 +6,7 @@ from datetime import datetime
 class Asset(models.Model):
     purchase_date_default = datetime.today()
     eol_date_default = datetime.today()
+    
     asset_manufacturer = models.CharField(max_length=100, help_text="The manufacturer of the asset e.g. Dell, HP.")
     asset_model = models.CharField(max_length=100, help_text="The model of the asset e.g. R740.")
     asset_location = models.CharField(max_length=50, help_text="The room the asset is in, e.g. SE175.", default="Science East")
