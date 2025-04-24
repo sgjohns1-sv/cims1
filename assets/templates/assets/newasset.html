@@ -18,16 +18,20 @@
                 <a class="nav-link" href="/settings/">Settings</a>
             </nav>
         </div>
-            <div class="container">
+            <div class="container w-50">
                 <div class="text-center"> 
-                    <h1>New Asset</h1>          
-                    <form action="{{object.id}}"method="post">
-                    {% csrf_token %}
-                    {{ form }}
-                    <input type="submit" value = "Create Asset" class="form-control btn btn-primary">
-                    </form>
-                </div> 
+                    <h1 class="pt-3 pb-3">New Asset</h1>
+                    <div>
+                        <form action="{{object.id}}"method="post">
+                            {% csrf_token %}
+                            {{ form }}
+                            <div class='pt-3'>
+                                <input type="submit" value = "Create Asset" class="btn btn-outline-primary">
+                            </div>
+                            </form>
+                    </div>          
 
+                </div>
         </div>
 
     </body>

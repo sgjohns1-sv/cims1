@@ -1,14 +1,35 @@
 <!DOCTYPE html> 
 {% load django_bootstrap5 %}
 {% bootstrap_css %}
-<head>
-    <title>Assets - Update</title>
-</head>
-<body>
-    <h1>Update Asset</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value = "Update Asset">
-    </form>
-</body>
+{% bootstrap_javascript %}
+
+<html>
+    <head>
+        <title>Assets - Update</title>
+    </head>
+    <body>
+        <div class="row">
+            <nav class="nav nav-tabs">
+                <a class="nav-link" href="/home/">Home</a>
+                <a class="nav-link active" href="/assets/">Assets</a>
+                <a class="nav-link" href="/maintenance/">Maintenance</a>
+                <a class="nav-link" href="/reports/">Reports</a>
+                <a class="nav-link" href="/settings/">Settings</a>
+            </nav>
+        </div>
+        <div class="container w-50">
+            <div class="text-center">
+                <h1 class="pt-3 pb-3">Update Asset</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input type="submit" value = "Update Asset" class="btn btn-outline-primary">
+                </form>
+            </div>
+
+        </div>
+
+    </body>
+    
+</html>
+

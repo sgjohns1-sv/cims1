@@ -2,27 +2,45 @@
 {% load django_bootstrap5 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
-<head>
-    <title>Assets - Details</title>
-</head>
-<body>
-    <form action="/assets" method="get">
-        <input type="submit" value="Return to Assets">
-    </form>
-    <h1> Asset {{ asset.id }} </h1>
-    <ul>
-            <li>Manufacturer: {{ asset.asset_manufacturer }}</li> 
-            <li>Model: {{ asset.asset_model }}</li>
-            <li>Serial Number: {{ asset.asset_sn }}</li>
-    </ul>
-    <form action="delete/" method="get">
-        {% csrf_token %}
-        <input type="submit" value="Delete"/>
-    </form>
-    <form action="update/" method="get">
-        {% csrf_token %}
-        <input type="submit" value="Update"/>
-    </form>
-
-</body>
+<html>
+    <head>
+        <title>Assets - Details</title>
+    </head>
+    <body>
+        <div class="row">    
+            <nav class="nav nav-tabs">
+                <a class="nav-link" href="/home/">Home</a>
+                <a class="nav-link active" href="/assets/">Assets</a>
+                <a class="nav-link" href="/maintenance/">Maintenance</a>
+                <a class="nav-link" href="/reports/">Reports</a>
+                <a class="nav-link" href="/settings/">Settings</a>
+            </nav> 
+            <div class="container w-50">
+                <div class="row">
+                    <h1 class="pt-3 pb-3"> Asset #{{ asset.id }} </h1>
+                    <ul class="list-group">
+                            <li class="list-group-item">Manufacturer: {{ asset.asset_manufacturer }}</li> 
+                            <li class="list-group-item">Model: {{ asset.asset_model }}</li>
+                            <li class="list-group-item">Location: {{ asset.asset_location }}</li>
+                            <li class="list-group-item">Serial Number: {{ asset.asset_sn }}</li>
+                            <li class="list-group-item">Cost: {{ asset.asset_cost }}</li>
+                            <li class="list-group-item">Purchase Date: {{ asset.asset_purchaseDate }}</li>
+                            <li class="list-group-item">EOL Date: {{ asset.asset_eolDate }}</li>
+                    </ul>
+                </div>
+                <div class="row pt-3">
+                    <form action="delete/" method="get">
+                        {% csrf_token %}
+                        <input type="submit" value="Delete" class="form-control btn btn-outline-primary"/>
+                    </form>
+                </div>
+                <div class="row pt-3">
+                    <form action="update/" method="get">
+                        {% csrf_token %}
+                        <input type="submit" value="Update" class="form-control btn btn-outline-primary"/>
+                    </form>
+                </div>
+            </div>
+    </body>    
+</html>
 
