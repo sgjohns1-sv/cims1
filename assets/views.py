@@ -1,28 +1,23 @@
 from .models import Asset
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, ListView, UpdateView, DeleteView, TemplateView
-from django.shortcuts import get_object_or_404, get_list_or_404
-
+from django.shortcuts import get_object_or_404
+from django.db.models import Q
 
 # Create your views here.
 
 class AssetListView(ListView):
     template_name = "assets/index.html"
     model = Asset
-
     def get_queryset(self):
-        if (self.request.GET['search'] == ''):
+        print(self.request.GET)
+        if ('search' not in self.request.GET.keys()):
             print('here1')
             asset_list = Asset.objects.all()
         else:
             print("here")
-            asset_list = Asset.objects.filter(asset_manufacturer__icontains=self.request.GET['search'])
+            asset_list = Asset.objects.filter(Q(asset_manufacturer__icontains=self.request.GET['search']) | Q(asset_model__icontains=self.request.GET['search']) | Q(asset_location__icontains=self.request.GET['search']) | Q(asset_sn__icontains=self.request.GET['search']) | Q(asset_cost__icontains=self.request.GET['search']) | Q(asset_purchaseDate__icontains=self.request.GET['search']) | Q(asset_eolDate__icontains=self.request.GET['search']) | Q(asset_notes__icontains=self.request.GET['search']))
         return asset_list
-    
-
-class AssetSearchView(ListView):
-    template_name="index.html"
-    model = Asset
     
 class AssetDetailView(DetailView):
     template_name = "assets/viewasset.html"
