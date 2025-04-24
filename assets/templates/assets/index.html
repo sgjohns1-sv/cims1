@@ -20,7 +20,8 @@
             <div class="row pb-5">
                 <div class="col">
                     <h1>Assets</h1>
-                    <form action="search/" method="post">
+                    <form action="" method="get">
+                        {% csrf_token %}
                         <input type="search" name="search" class="form-control" class="form-control">
                         <input type="submit" value="Search" class="form-control btn btn-outline-primary">
                     </form>
