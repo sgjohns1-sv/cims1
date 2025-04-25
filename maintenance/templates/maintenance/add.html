@@ -2,22 +2,33 @@
 {% load django_bootstrap5 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
-<head>
-    <title>Maintenance - New</title>
-</head>
+<html>
+    <head>
+        <title>Maintenance - New</title>
+    </head>
 
-<body>
-    <nav>
-        <a href="/home/">Home</a>
-        <a href="/assets/">Assets</a>
-        <a href="/maintenance/">Maintenance</a>
-        <a href="/reports/">Reports</a>
-        <a href="/settings/">Settings</a>
-    </nav>
-    <h1>New Asset</h1>
-    <form action="{{object.id}}"method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value = "Create Asset">
-    </form>
-</body>
+    <body>
+        <div class="row">
+            <nav class="nav nav-tabs">
+                <a class="nav-link" href="/home/">Home</a>
+                <a class="nav-link" href="/assets/">Assets</a>
+                <a class="nav-link active" href="/maintenance/">Maintenance</a>
+                <a class="nav-link" href="/reports/">Reports</a>
+                <a class="nav-link disabled" href="/settings/">Settings</a>
+            </nav>
+        </div>
+        <div class="container w-50">
+            <div class="text-center">
+                <h1 class="pt-3 pb-3">New Maintenance Record</h1>
+                <p>Please enter the relevant maintenance information including but not limited to the asset it relates to, the title of the maintenance, description of the work performed, cost, and date.</p>
+                <form action="{{object.id}}"method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                    <div class="pt-3">
+                        <input type="submit" value = "Create Record" class="btn btn-outline-primary">
+                    </div>
+                </form>
+            </div>
+
+        </body>
+</html>

@@ -11,7 +11,7 @@ class MaintenanceListView(ListView):
 class MaintenanceDetailView(DetailView):
     template_name="maintenance/detailview.html"
     model = Maintenance
-    
+
 class MaintenanceAddView(CreateView):
     template_name="maintenance/add.html"
     model = Maintenance
