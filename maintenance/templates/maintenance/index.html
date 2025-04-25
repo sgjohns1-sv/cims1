@@ -41,7 +41,7 @@
                         <th>Asset</th>
                         <th>Date Performed</th>
                     </tr>
-                    {% for records in allRecords %}
+                    {% for maintenance in maintenance_list %}
                     <tr>
                         <td><a href="{{ maintenance.id }}">{{maintenance.id}}</a></td>
                         <td>{{maintenance.maint_title}}</td>

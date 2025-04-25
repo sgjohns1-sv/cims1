@@ -1,9 +1,9 @@
 from django.urls import path
-from .views import MaintenanceAddView
+from .views import MaintenanceListView, MaintenanceAddView
 
 from . import views
 
 urlpatterns=[    
-    path("", views.index, name="maintenance"),
-    path("add/", MaintenanceAddView.as_view()),
+    path("", MaintenanceListView.as_view(), name="maintenance_list"),
+    path("add/", MaintenanceAddView.as_view(), name="maintenance_add"),
     ]

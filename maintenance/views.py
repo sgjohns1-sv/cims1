@@ -1,13 +1,12 @@
 from django.shortcuts import render
 from .models import Maintenance
-from django.views.generic import CreateView
+from django.views.generic import ListView, CreateView
 
 # Create your views here.
 
-def index(request):
-    allMaintenance = Maintenance.objects.all()
-    context = {"allMaintenance": allMaintenance}
-    return render(request, "maintenance/index.html", context)
+class MaintenanceListView(ListView):
+    template_name="maintenance/index.html"
+    model = Maintenance
 
 class MaintenanceAddView(CreateView):
     template_name="assets/newasset.html"
