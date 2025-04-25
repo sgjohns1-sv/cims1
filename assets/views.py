@@ -10,12 +10,9 @@ class AssetListView(ListView):
     template_name = "assets/index.html"
     model = Asset
     def get_queryset(self):
-        print(self.request.GET)
         if ('search' not in self.request.GET.keys()):
-            print('here1')
             asset_list = Asset.objects.all()
         else:
-            print("here")
             asset_list = Asset.objects.filter(Q(asset_manufacturer__icontains=self.request.GET['search']) | Q(asset_model__icontains=self.request.GET['search']) | Q(asset_location__icontains=self.request.GET['search']) | Q(asset_sn__icontains=self.request.GET['search']) | Q(asset_cost__icontains=self.request.GET['search']) | Q(asset_purchaseDate__icontains=self.request.GET['search']) | Q(asset_eolDate__icontains=self.request.GET['search']) | Q(asset_notes__icontains=self.request.GET['search']))
         return asset_list
     
