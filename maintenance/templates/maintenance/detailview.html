@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<html>
+    <head>
+        <title>Maintenance - Detail</title>
+    </head>
+    <body>
+        <div class="row">
+            <nav class="nav nav-tabs">
+                <a class="nav-link" href="/home/">Home</a>
+                <a class="nav-link " href="/assets/">Assets</a>
+                <a class="nav-link active" href="/maintenance/">Maintenance</a>
+                <a class="nav-link" href="/reports/">Reports</a>
+                <a class="nav-link disabled" href="/settings/">Settings</a>
+            </nav> 
+        </div>
+        <div class="container w-50">
+            <div class="row">
+                <h1 class="pt-3 pb-3">Record #{{ maintenance.id }}</h1>
+                <ul class="list-group">
+                    <li class="list-group-item">Short Description: {{ maintenance.maint_title }}</li>
+                    <li class="list-group-item">Cost: {{ maintenance.maint_cost }}</li>
+                    <li class="list-group-item">Asset: {{ maintenance.maint_assetID }}</li>
+                    <li class="list-group-item">Date of Service: {{ maintenance.maint_date }}</li>
+                    <li class="list-group-item">Description: {{ maintenance.maint_description }}</li>
+                </ul>
+            <div>
+            <div class="row pt-3">
+                <form action="delete/" method="get">
+                    {% csrf_token %}
+                    <input type="submit" value="Delete" class="form-control btn btn-outline-primary"/>
+                </form>
+            </div>
+            <div class="row pt-3">
+                <form action="update/" method="get">
+                    {% csrf_token %}
+                    <input type="submit" value="Update" class="form-control btn btn-outline-primary"/>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
