@@ -17,12 +17,14 @@
             </nav>
         </div>
         <div class="row">
-            <div class="container w-50">
+            <div class="container w-50 text-center">
                 <h1 class="pt-3 pb-3">Update Maintenance Record</h1>
                 <form method="post">
                     {%csrf_token%}
                     {{form}}
-                    <input type="submit" value="Update Record" class="btn btn-outline-primary"/>
+                    <div class="pt-3">
+                        <input type="submit" value="Update Record" class="btn btn-outline-primary"/>
+                    </div>
                 </form>
             </div>
         </div>
