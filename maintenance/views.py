@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.urls import reverse_lazy
 from .models import Maintenance
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 
@@ -21,3 +21,8 @@ class MaintenanceUpdateView(UpdateView):
     template_name="maintenance/updateview.html"
     model=Maintenance
     fields = ["maint_assetID", "maint_title", "maint_description", "maint_cost", "maint_date"]
+
+class MaintenanceDeleteView(DeleteView):
+    template_name="maintenance/deleteview.html"
+    model=Maintenance
+    success_url = reverse_lazy("maintenance_list")
