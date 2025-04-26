@@ -26,6 +26,7 @@
 
         <div class="row">
             <div class="col">
+                <!--Displays the current total number of assets in the system.-->
                 <h3>Total Asset Count: {{asset_count}}</h3>
             </div>
     
@@ -39,6 +40,7 @@
                         <th>Title</th>
                         <th>Cost</th>
                     </tr>
+                    <!-- Loops through each of the maintenance records and displays relevant maintenance information. -->
                     {% for maintenance in recent_maintenance %}
                         <tr>
                             <td>{{maintenance.asset}}</td>
