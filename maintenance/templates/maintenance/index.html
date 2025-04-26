@@ -44,10 +44,10 @@
                     {% for maintenance in maintenance_list %}
                     <tr>
                         <td><a href="{{ maintenance.id }}">{{maintenance.id}}</a></td>
-                        <td>{{maintenance.maint_title}}</td>
-                        <td>{{maintenance.maint_cost}}</td>
-                        <td>{{maintenance.maint_assetID}}</td>
-                        <td>{{maintenance.maint_date}}</td>
+                        <td>{{maintenance.title}}</td>
+                        <td>{{maintenance.cost}}</td>
+                        <td>{{maintenance.asset}}</td>
+                        <td>{{maintenance.date}}</td>
                     </tr>
                     {% endfor %}
                 </table>

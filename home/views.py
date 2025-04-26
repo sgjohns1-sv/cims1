@@ -9,6 +9,6 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["asset_count"] = Asset.objects.count()
-        context["recent_maintenance"] = Maintenance.objects.filter(maint_date__year=2025)
+        context["recent_maintenance"] = Maintenance.objects.filter(date__year=2025)
         return context
     

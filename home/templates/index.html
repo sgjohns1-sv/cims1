@@ -41,9 +41,9 @@
                     </tr>
                     {% for maintenance in recent_maintenance %}
                         <tr>
-                            <td><a href="{{maintenance.assetID}}"></a>{{maintenance.maint_assetID}}</td>
-                            <td>{{ maintenance.maint_title }}</td>
-                            <td>{{ maintenance.maint_cost }}</td>
+                            <td>{{maintenance.asset}}</td>
+                            <td>{{ maintenance.title }}</td>
+                            <td>{{ maintenance.cost }}</td>
                         </tr>
                     {% endfor %}
                 </table>

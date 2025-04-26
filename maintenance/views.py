@@ -15,12 +15,12 @@ class MaintenanceDetailView(DetailView):
 class MaintenanceAddView(CreateView):
     template_name="maintenance/addview.html"
     model = Maintenance
-    fields = ["maint_assetID", "maint_title", "maint_description", "maint_cost", "maint_date"]
+    fields = ["asset", "title", "description", "cost", "date"]
 
 class MaintenanceUpdateView(UpdateView):
     template_name="maintenance/updateview.html"
     model=Maintenance
-    fields = ["maint_assetID", "maint_title", "maint_description", "maint_cost", "maint_date"]
+    fields = ["asset", "title", "description", "cost", "date"]
 
 class MaintenanceDeleteView(DeleteView):
     template_name="maintenance/deleteview.html"

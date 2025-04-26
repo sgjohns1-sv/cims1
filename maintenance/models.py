@@ -7,11 +7,11 @@ from assets.models import Asset
 class Maintenance(models.Model):
     maintenance_date_default = datetime.today()
 
-    maint_assetID = models.ForeignKey(Asset, on_delete=models.CASCADE, default=1000)
-    maint_title = models.CharField(max_length=100)
-    maint_description = models.TextField(blank=True)
-    maint_cost = models.CharField(max_length=7)
-    maint_date = models.DateTimeField(default=maintenance_date_default)
+    asset = models.ForeignKey(Asset, on_delete=models.CASCADE, default=1000)
+    title = models.CharField(max_length=100)
+    description = models.TextField(blank=True)
+    cost = models.CharField(max_length=7, blank=True)
+    date = models.DateTimeField(default=maintenance_date_default)
     def get_absolute_url(self):
         return reverse("maintenance_detail", kwargs={"pk": self.pk})
     
