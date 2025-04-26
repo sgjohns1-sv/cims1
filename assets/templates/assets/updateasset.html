@@ -20,6 +20,7 @@
         <div class="container w-50">
             <div class="text-center">
                 <h1 class="pt-3 pb-3">Update Asset</h1>
+                <!--Form is displayed for the user to update the asset in the database. Inputs and updates are handled by the Django view.-->
                 <form method="post">
                     {% csrf_token %}
                     {{ form }}

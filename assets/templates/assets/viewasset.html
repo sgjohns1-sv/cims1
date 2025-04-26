@@ -18,6 +18,7 @@
             </div>
             <div class="container w-50">
                 <div class="row">
+                    <!--A detailed view of the asset is presented in an unordered list with context passed from the backend.-->
                     <h1 class="pt-3 pb-3"> Asset #{{ asset.id }} </h1>
                     <ul class="list-group">
                             <li class="list-group-item">Manufacturer: {{ asset.manufacturer }}</li> 
@@ -29,12 +30,14 @@
                             <li class="list-group-item">EOL Date: {{ asset.eol_date }}</li>
                     </ul>
                 </div>
+                <!--A button is provided to take the user to the page to delete this asset.-->
                 <div class="row pt-3">
                     <form action="delete/" method="get">
                         {% csrf_token %}
                         <input type="submit" value="Delete" class="form-control btn btn-outline-primary"/>
                     </form>
                 </div>
+                <!--A button is provided to take the user to the update page of this asset.-->
                 <div class="row pt-3">
                     <form action="update/" method="get">
                         {% csrf_token %}

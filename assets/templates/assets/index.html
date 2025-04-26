@@ -20,6 +20,7 @@
             <div class="row pt-3 pb-3">
                 <div class="col">
                     <h1>Assets</h1>
+                    <!--Form to execute search query on the assets in the system. The form calls its own url and code on the back end executes to list the correct query set.-->
                     <form action="" method="get">
                         {% csrf_token %}
                         <input type="search" name="search" class="form-control">
@@ -41,6 +42,7 @@
                         <th>Purchase Date</th>
                         <th>EOL Date</th>
                     </tr>
+                    <!--Loops through the query set received to display the desired list of assets.-->
                     {% for asset in asset_list %}
                         <tr>
                             <td><a href="{{ asset.id }}">{{ asset.id }}</a></td>
