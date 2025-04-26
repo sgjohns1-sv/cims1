@@ -21,6 +21,7 @@
             <div class="text-center">
                 <h1 class="pt-3 pb-3">New Maintenance Record</h1>
                 <p>Please enter the relevant maintenance information including but not limited to the asset it relates to, the title of the maintenance, description of the work performed, cost, and date.</p>
+                <!--A form used to handle the addition of a maintenance record to the system where the Django AddView class handles all of the form input.-->
                 <form action="{{object.id}}"method="post">
                     {% csrf_token %}
                     {{ form }}

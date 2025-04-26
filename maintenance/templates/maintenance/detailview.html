@@ -19,6 +19,7 @@
         <div class="container w-50">
             <div class="row">
                 <h1 class="pt-3 pb-3">Record #{{ maintenance.id }}</h1>
+                <!--An unordered list used to display the detailed values for maintenance records.-->
                 <ul class="list-group">
                     <li class="list-group-item">Short Description: {{ maintenance.title }}</li>
                     <li class="list-group-item">Cost: {{ maintenance.cost }}</li>
@@ -28,12 +29,14 @@
                 </ul>
             <div>
             <div class="row pt-3">
+                <!--Button that takes users to the delete page to delete the current maintenance record.-->
                 <form action="delete/" method="get">
                     {% csrf_token %}
                     <input type="submit" value="Delete" class="form-control btn btn-outline-primary"/>
                 </form>
             </div>
             <div class="row pt-3">
+                <!--Button that takes users to the update page to update the current maintenance record.-->
                 <form action="update/" method="get">
                     {% csrf_token %}
                     <input type="submit" value="Update" class="form-control btn btn-outline-primary"/>

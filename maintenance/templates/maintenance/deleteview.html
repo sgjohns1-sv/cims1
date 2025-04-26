@@ -12,6 +12,7 @@
         <div class="container text-center">
             <h1 class="text-danger pt-5">Delete Maintenance Record</h1>
             <h3 class="text-danger pt-3 pb-3">Are you sure you want to delete this maintenance record?</h3>
+            <!--A form used to handle the deletion of a maintenance record where the user confirms the deletion and the DeleteView handles the rest.-->
             <form method ="post">
                 {%csrf_token%}
                 {{form}}

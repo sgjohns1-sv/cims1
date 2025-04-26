@@ -20,6 +20,7 @@
             <div class="row pt-3 pb-3">
                 <div class="col">
                     <h1>Maintenance</h1>
+                    <!--Form to search on the available Maintenance records in the system based on the search term passed to the backend.-->
                     <form method="get">
                         {%csrf_token%}
                         <input type="saerch" name="search" class="form-control">
@@ -33,6 +34,7 @@
                 </div>
             </div>
             <div ="row">
+                <!--Table to list all of the current maintenance records passed in the view's context.-->
                 <table class ="table table-striped table-hover">
                     <tr>
                         <th>Record Number</th>

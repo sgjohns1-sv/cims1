@@ -3,6 +3,7 @@ from .views import MaintenanceListView, MaintenanceAddView, MaintenanceDeleteVie
 
 from . import views
 
+#Specifies the URL patterns to use after the initial requst is routed using the master url list for all apps.
 urlpatterns=[    
     path("", MaintenanceListView.as_view(), name="maintenance_list"),
     path("<int:pk>/", MaintenanceDetailView.as_view(), name="maintenance_detail"),
