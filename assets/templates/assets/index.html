@@ -44,13 +44,13 @@
                     {% for asset in asset_list %}
                         <tr>
                             <td><a href="{{ asset.id }}">{{ asset.id }}</a></td>
-                            <td>{{ asset.asset_manufacturer }}</td>
-                            <td>{{ asset.asset_model }}</td>
-                            <td>{{ asset.asset_location }}</td>
-                            <td>{{ asset.asset_sn }}</td>
-                            <td>{{ asset.asset_cost }}</td>
-                            <td>{{ asset.asset_purchaseDate }}</td>
-                            <td>{{ asset.asset_eolDate }}</td>
+                            <td>{{ asset.manufacturer }}</td>
+                            <td>{{ asset.model }}</td>
+                            <td>{{ asset.location }}</td>
+                            <td>{{ asset.sn }}</td>
+                            <td>{{ asset.cost }}</td>
+                            <td>{{ asset.purchase_date }}</td>
+                            <td>{{ asset.eol_date }}</td>
                         </tr>
                     {% endfor %}
                 </table>

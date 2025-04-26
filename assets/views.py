@@ -26,12 +26,12 @@ class AssetDetailView(DetailView):
 class AssetAddView(CreateView):
     template_name="assets/newasset.html"
     model = Asset
-    fields = ["asset_manufacturer", "asset_model", "asset_sn", "asset_location", "asset_cost", "asset_purchaseDate", "asset_eolDate", "asset_notes"]
+    fields = ["manufacturer", "model", "sn", "location", "cost", "purchase_date", "eol_date", "notes"]
 
 class AssetUpdateView(UpdateView):
     template_name="assets/updateasset.html"
     model = Asset
-    fields = ["asset_manufacturer", "asset_model", "asset_sn", "asset_location", "asset_cost", "asset_purchaseDate", "asset_eolDate", "asset_notes"]
+    fields = ["manufacturer", "model", "sn", "location", "cost", "purchase_date", "eol_date", "notes"]
 
 class AssetDeleteView(DeleteView):
     template_name="assets/deleteasset.html"
