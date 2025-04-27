@@ -13,7 +13,7 @@
                 <a class="nav-link" href="/home/">Home</a>
                 <a class="nav-link" href="/assets/">Assets</a>
                 <a class="nav-link active" href="/maintenance/">Maintenance</a>
-                <a class="nav-link" href="/reports/">Reports</a>
+                <a class="nav-link dsiabled" href="/reports/">Reports</a>
                 <a class="nav-link disabled" href="/settings/">Settings</a>
             </nav>
         </div>
@@ -26,7 +26,7 @@
                     {% csrf_token %}
                     {{ form }}
                     <div class="pt-3">
-                        <input type="submit" value = "Create Record" class="btn btn-outline-primary">
+                        <input type="submit" value="Create Record" class="btn btn-outline-primary">
                     </div>
                 </form>
             </div>
