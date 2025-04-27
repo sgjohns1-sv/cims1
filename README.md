@@ -32,17 +32,17 @@ Python Packages Used:
 
 3. Create a Python virtual environment and activate it.
 
-4. *Only if running on Linux* Install the required packages to run the mysqlclient package with the following command:
+4. *Only if running on Linux* - Install the required packages to run the mysqlclient package with the following command:
 
     `sudo apt-get install python3-dev default-libmysqlclient-dev build-essential pkg-config`
     
-    See the mysqlconnector project [reference](https://pypi.org/project/mysqlclient/) for more information.
+    See the mysqlclient project [reference](https://pypi.org/project/mysqlclient/) for more information.
 
 5. Run `python -m pip install -r requirements.txt`.
 
 6. Install MySQL server on the localhost, either with the installer or in a Docker container.
 
-        Note: You may need to work with and load the MySQL timezone tables. More information can be found [here] (https://dev.mysql.com/doc/refman/8.4/en/mysql-tzinfo-to-sql.html).
+        Note: You may need to work with and load the MySQL timezone tables. More information can be found in the [Django docs](https://docs.djangoproject.com/en/5.2/ref/databases/#time-zone-definitions) and in the [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/mysql-tzinfo-to-sql.html).
 
 7. Create a database user with the following commands using these credentials and privileges:
         ```
@@ -58,6 +58,8 @@ Python Packages Used:
 9. In the same directory run `python manage.py migrate` to make the necessary migrations.
 
 10. Run `uwsgi -http :8000 -module cims1proj.wsgi` to start the server and run the application.
+
+11. The application should now be available at https://<your host IP>:8000
 
 ### Youtube
 
