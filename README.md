@@ -2,7 +2,7 @@
 ## The CSIS Inventory and Maintenance System
 
 ### Project Description
-The CIMS project/software will have asset inventory and maintenance record keeping functions. Additionally, reporting functionality for those records will be available. Assets and their corresponding information such as serial number, purchase date, EOL date, owner, and more will be able to be tracked. Similarly, assets will have a maintenance history so parts of larger assets (such as servers) can have their replacement cycles tracked. 
+The CIMS project/software will have asset inventory and maintenance record keeping functions. Assets and their corresponding information such as serial number, purchase date, EOL date, and more will be able to be tracked. Similarly, assets will have a maintenance history so parts of larger assets (such as servers) can have their replacement cycles tracked. 
 
 ### Project Purpose
 The purpose of this project is to provide more efficient and effective record keeping for CSIS department assets. This project will streamline department recordkeeping operations and enable more efficient inventory and maintenance activities.
@@ -18,7 +18,7 @@ Technologies used for this project include:
 * Django
 * HTML/CSS
 
-Python Packages Used
+Python Packages Used:
 * Django
 * Django-bootstrap5
 * Mysqlclient
