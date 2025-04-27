@@ -90,7 +90,7 @@ DATABASES = {
         "NAME": "cims1",
         "USER": "cimsuser",
         "PASSWORD": "CimsUser123!",
-        "HOST": "localhost",
+        "HOST": "127.0.0.1",
         "PORT": "3306",
     }
 }
