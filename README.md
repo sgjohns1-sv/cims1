@@ -57,7 +57,7 @@ Python Packages Used:
 
 10. Run `uwsgi -http :8000 -module cims1proj.wsgi` to start the server and run the application.
 
-11. The application should now be available at https://<your host IP>:8000
+11. The application should now be available at https://yourhostIP:8000
 
 ### Youtube
 
