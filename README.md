@@ -14,15 +14,15 @@ The value derived from this project is saved time, saved money, and an improved 
 
 Technologies used for this project include:
 * MySQL Server
-* Python 3.13.2
+* Python 3.13
 * Django
 * HTML/CSS
-* Docker (for production)
 
 Python Packages Used
 * Django
 * Django-bootstrap5
 * Mysqlclient
+* uWSGI
 
 
 
