@@ -61,6 +61,6 @@ Python Packages Used:
 
 ### Youtube
 
-For a video walkthrough of the project, please see the following [video](https://youtu.be/jKo5FaNNaNw)
+For a live walkthrough of the project, please see the following [video](https://youtu.be/jKo5FaNNaNw)
 
 
