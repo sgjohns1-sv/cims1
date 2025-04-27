@@ -24,5 +24,44 @@ Python Packages Used
 * Mysqlclient
 * uWSGI
 
+### Setup Instructions
+
+1. Ensure Python 3.13 or higher is installed on your system.
+
+2. Git clone the repository.
+
+3. Create a Python virtual environment and activate it.
+
+4. Install the required packages to run the mysqlclient package with the following command:
+
+    `sudo apt-get install python3-dev default-libmysqlclient-dev build-essential pkg-config`
+    
+    See the mysqlconnector project [reference](https://pypi.org/project/mysqlclient/) for more information.
+
+5. Run `python -m pip install -r requirements.txt`.
+
+6. Install MySQL server on the localhost, either with the installer or in a Docker container.
+
+        Note: You may need to work with and load the MySQL timezone tables. More information can be found [here] (https://dev.mysql.com/doc/refman/8.4/en/mysql-tzinfo-to-sql.html).
+
+7. Create a database user with the following commands using these credentials and privileges:
+        ```
+        USE cims1;
+        CREATE USER cimsuser IDENTIFIED BY 'CimsUser123!';
+
+        GRANT ALL 
+        ON *.*
+        TO cimsuser;
+        ```
+
+8. In the cims1 directory, run `python manage.py makemigrations` to generate the necessary SQL code.
+
+9. In the same directory run `python manage.py migrate` to make the necessary migrations.
+
+10. Run `uwsgi -http :8000 -module cims1proj.wsgi` to start the server and run the application.
+
+### Youtube
+
+For a video walkthrough of the project, please see the following [video](www.youtube.com)
 
 
