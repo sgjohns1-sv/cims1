@@ -5,12 +5,13 @@ from django.db.models import Q
 
 #Class based view to list the maintenance records stored in the system.
 class MaintenanceListView(ListView):
-    template_name="maintenance/index.html"
-    model = Maintenance
+    template_name="maintenance/index.html" #Specifies the template to be rendered for this view.
+    model = Maintenance #Specifies the model for the list view to use.
     def get_queryset(self):
+        #Method with an if statement to determine whether or not a search term was passed in the request.
         if ('search' not in self.request.GET.keys()):
-            maintenance_list = Maintenance.objects.all()
-        else:
+            maintenance_list = Maintenance.objects.all() #Gets all objects in the database if no search term is passed.
+        else: #Otherwise, the various fields of the Maintenance record model are searched or filtered using the search term.
             maintenance_list = Maintenance.objects.filter(Q(title__icontains=self.request.GET['search']) | Q(cost__icontains=self.request.GET['search']) | Q(description__icontains=self.request.GET['search']) | Q(date__icontains=self.request.GET['search']))
         return maintenance_list
 

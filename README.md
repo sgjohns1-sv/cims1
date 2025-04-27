@@ -32,7 +32,7 @@ Python Packages Used
 
 3. Create a Python virtual environment and activate it.
 
-4. Install the required packages to run the mysqlclient package with the following command:
+4. *Only if running on Linux* Install the required packages to run the mysqlclient package with the following command:
 
     `sudo apt-get install python3-dev default-libmysqlclient-dev build-essential pkg-config`
     
@@ -48,7 +48,6 @@ Python Packages Used
         ```
         USE cims1;
         CREATE USER cimsuser IDENTIFIED BY 'CimsUser123!';
-
         GRANT ALL 
         ON *.*
         TO cimsuser;
@@ -62,6 +61,6 @@ Python Packages Used
 
 ### Youtube
 
-For a video walkthrough of the project, please see the following [video](www.youtube.com)
+For a video walkthrough of the project, please see the following [video](https://www.youtube.com)
 
 
