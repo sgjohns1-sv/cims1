@@ -13,7 +13,7 @@ class AssetListView(ListView):
         if ('search' not in self.request.GET.keys()): #If it doesn't then the whole list of assets is returned as normal.
             asset_list = Asset.objects.all()
         else: #If it does, the objects are filtered based on this search query.
-            asset_list = Asset.objects.filter(Q(asset_manufacturer__icontains=self.request.GET['search']) | Q(asset_model__icontains=self.request.GET['search']) | Q(asset_location__icontains=self.request.GET['search']) | Q(asset_sn__icontains=self.request.GET['search']) | Q(asset_cost__icontains=self.request.GET['search']) | Q(asset_purchaseDate__icontains=self.request.GET['search']) | Q(asset_eolDate__icontains=self.request.GET['search']) | Q(asset_notes__icontains=self.request.GET['search']))
+            asset_list = Asset.objects.filter(Q(manufacturer__icontains=self.request.GET['search']) | Q(model__icontains=self.request.GET['search']) | Q(location__icontains=self.request.GET['search']) | Q(sn__icontains=self.request.GET['search']) | Q(cost__icontains=self.request.GET['search']) | Q(purchase_date__icontains=self.request.GET['search']) | Q(eol_date__icontains=self.request.GET['search']) | Q(notes__icontains=self.request.GET['search']))
         return asset_list
     
 #Class based detail view used to show the details of an asset.
