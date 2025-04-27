@@ -63,5 +63,5 @@ Python Packages Used:
 
 For a live walkthrough of the project, please see the following [video](https://youtu.be/jKo5FaNNaNw)
 
-## A Quick Note on the Commit History
+#### A Quick Note on the Commit History
 I had some challenges with my repos so I've had to rebuild them a of couple times. My commit history may look short but I do have history earlier than the earliest date shown.
