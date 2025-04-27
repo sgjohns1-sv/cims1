@@ -10,7 +10,7 @@
     <body>
         <div class="container text-center">
             <h1 class="text-danger pt-5">Asset Deletion</h1>
-            <h3 class="text-danger pt-3 pb-3">Are you sure you want to delete this asset?</h3>
+            <h3 class="text-danger pt-3 pb-3">Are you sure you want to delete this asset? This will cause all related maintenance records to be deleted as well.</h3>
             <!--Form is inserted and the user is prompted as to whether or not they actually want to delete the asset.-->
             <form method="post">
                 {% csrf_token %}
