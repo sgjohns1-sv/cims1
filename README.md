@@ -40,9 +40,7 @@ Python Packages Used:
 
 5. Run `python -m pip install -r requirements.txt`.
 
-6. Install MySQL server on the localhost, either with the installer or in a Docker container.
-
-        Note: You may need to work with and load the MySQL timezone tables. More information can be found in the [Django docs](https://docs.djangoproject.com/en/5.2/ref/databases/#time-zone-definitions) and in the [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/mysql-tzinfo-to-sql.html).
+6. Install MySQL server on the localhost, either with the installer or in a Docker container. You may need to work with and load the MySQL timezone tables. More information can be found in the [Django docs](https://docs.djangoproject.com/en/5.2/ref/databases/#time-zone-definitions) and in the [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/mysql-tzinfo-to-sql.html).
 
 7. Create a database user with the following commands using these credentials and privileges:
         ```
